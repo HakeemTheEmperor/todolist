@@ -69,12 +69,12 @@ class Program
         {
             Console.Write("Enter a new task / enter done: ");
             string? task = Console.ReadLine();
-            while (string.IsNullOrEmpty(task))
+            while (string.IsNullOrWhiteSpace(task))
             {
-                Console.Write("Enter a new task / enter done: ");
+                Console.Write("Please enter a valid task (cannot be empty): ");
                 task = Console.ReadLine();
             }
-            switch (task)
+            switch (task.ToLower())
             {
                 case "done":
                     SaveTasks(tasks, tasksFile);
