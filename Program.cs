@@ -17,6 +17,8 @@ class Program
 
         List<string> tasks = LoadTasks(tasksFile);
 
+        PrintHeader();
+
         Console.Write("Welcome to the tasks app! \nEnter a command (add, delete, list, exit) ");
 
         while (true)
@@ -39,7 +41,7 @@ class Program
 
                 case "exit":
                     SaveTasks(tasks, tasksFile);
-                    Console.WriteLine("Bye!");
+                    PrintFooter();
                     return;
 
                 default:
@@ -121,4 +123,18 @@ class Program
         string json = JsonSerializer.Serialize(tasks);
         File.WriteAllText(tasksFile, json);
     }
+    static void PrintHeader()
+{
+    Console.Clear();
+    Console.WriteLine("===============================================");
+    Console.WriteLine("             Todo List App                  ");
+    Console.WriteLine("===============================================");
+}
+
+static void PrintFooter()
+{
+    Console.WriteLine("===============================================");
+    Console.WriteLine("                     GoodBye                   ");
+    Console.WriteLine("===============================================");
+}
 }
