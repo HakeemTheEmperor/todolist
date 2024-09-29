@@ -44,11 +44,15 @@ class Program
                     PrintFooter();
                     return;
 
+                case "clear":
+                    ClearTasks(tasks, tasksFile);
+                    break;
+
                 default:
-                    Console.WriteLine("Unknown Command. Please enter add, remove, list or exit");
+                    Console.WriteLine("Unknown Command. Please enter add, delete, list or exit");
                     break;
             }
-            Console.Write("What would you like to do: ");
+            Console.Write("What would you like to do (add, delete, list, exit): ");
         }
     }
 
@@ -76,7 +80,7 @@ class Program
                 Console.Write("Please enter a valid task (cannot be empty): ");
                 task = Console.ReadLine();
             }
-            switch (task.ToLower())
+            switch (task.Trim().ToLower())
             {
                 case "done":
                     SaveTasks(tasks, tasksFile);
@@ -102,8 +106,17 @@ class Program
 
     static void RemoveTask(List<string> tasks, string tasksFile)
     {
+        ListTasks(tasks);
+        Console.WriteLine();
         Console.Write("Enter the task id to delete: ");
-        if (int.TryParse(Console.ReadLine(), out int index) && index > 0 && index <= tasks.Count)
+        string? input = Console.ReadLine();
+
+        if (input?.ToLower().Trim() == "back")
+        {
+            Console.WriteLine("Operation cancelled by User!");
+            return;
+        }
+        else if (int.TryParse(input, out int index) && index > 0 && index <= tasks.Count)
         {
             string removedTask = tasks[index - 1];
             tasks.RemoveAt(index - 1);
@@ -123,6 +136,23 @@ class Program
         string json = JsonSerializer.Serialize(tasks);
         File.WriteAllText(tasksFile, json);
     }
+
+    static void ClearTasks(List<string> tasks, string tasksFile) 
+    { 
+        tasks.Clear();
+        SaveTasks(tasks, tasksFile);
+        Console.WriteLine("All tasks cleared.");
+        Console.WriteLine();
+    }
+
+    static void ResetTasksDaily(List<string> tasks, string tasksFile)
+    {
+        tasks.Clear();
+        SaveTasks(tasks, tasksFile);
+        Console.WriteLine("Daily tasks reset.");
+        Console.WriteLine();
+    }
+
     static void PrintHeader()
 {
     Console.Clear();

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>HTETodoTool</id>
+    <version>1.0.2</version>
+    <authors>HTE</authors>
+    <description>Package Description</description>
+    <packageTypes>
+      <packageType name="DotnetTool" />
+    </packageTypes>
+    <repository type="git" commit="75d9140f66e8a9d8100ae26e601e5854eb934d6c" />
+  </metadata>
+  <files>
+    <file src="C:\Users\user\Documents\NET Core\todolist\obj\DotnetToolSettings.xml" target="tools\net8.0\any\DotnetToolSettings.xml" />
+    <file src="C:\Users\user\Documents\NET Core\todolist\bin\Release\net8.0\publish\todolist.dll" target="tools\net8.0\any\todolist.dll" />
+    <file src="C:\Users\user\Documents\NET Core\todolist\bin\Release\net8.0\publish\todolist.deps.json" target="tools\net8.0\any\todolist.deps.json" />
+    <file src="C:\Users\user\Documents\NET Core\todolist\bin\Release\net8.0\publish\todolist.runtimeconfig.json" target="tools\net8.0\any\todolist.runtimeconfig.json" />
+    <file src="C:\Users\user\Documents\NET Core\todolist\bin\Release\net8.0\publish\todolist.pdb" target="tools\net8.0\any\todolist.pdb" />
+    <file src="C:\Users\user\Documents\NET Core\todolist\README.md" target="content\README.md" />
+  </files>
+</package>
