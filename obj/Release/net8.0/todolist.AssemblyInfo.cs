@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Imperium")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.2.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+75d9140f66e8a9d8100ae26e601e5854eb934d6c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+7c77a13f8ab9d736d2492b68f4192c0afcf2dd52")]
 [assembly: System.Reflection.AssemblyProductAttribute("todolist")]
 [assembly: System.Reflection.AssemblyTitleAttribute("todolist")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.2.0")]
