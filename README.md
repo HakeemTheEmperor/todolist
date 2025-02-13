@@ -1,4 +1,4 @@
-# TodoTool
+# The Notebook
 
 #### Video Demo: <URL_HERE>
 
